@@ -435,85 +435,108 @@
         </div>
     </div>
 
-    <script>
-        const translations = {
-            fr: {
-                'choose-lang': 'Choisissez votre langue',
-                badge: '✨ 100 PREMIERS MEMBRES SEULEMENT',
-                subtitle: 'Tu fais partie des 100 premiers à débloquer la Gold Access Edition',
-                'feature1-title': 'Accès Exclusif',
-                'feature1-text': 'Tu viens de découvrir l\'un des accès limités à la Gold Access Edition. Ton assistant IA personnel pensé pour la création visuelle augmentée.',
-                'feature2-title': 'Prompt Architect V1',
-                'feature2-text': 'S\'inspire de l\'architecture, du cinéma et de la photographie pour donner vie à tes idées. Il apprend de ton style et s\'adapte à ta sensibilité.',
-                'feature3-title': 'Réalisme Cinématique',
-                'feature3-text': 'Crée avec toi des visuels d\'une qualité professionnelle, avec une attention aux détails digne du cinéma et de la photographie d\'art.',
-                'price-label': 'Offre Limitée Gold Access',
-                'per-month': '/mois',
-                'price-detail': '(hors taxes - limité aux 100 premiers)',
-                cta: '👉 Rejoindre la Gold Access Edition',
-                'about-title': '💡 À propos de GenerateToBeYou',
-                'about-text1': 'GenerateToBeYou, c\'est la rencontre entre l\'instinct humain et la précision de l\'IA.',
-                'about-text2': 'Pensé pour les créateurs, designers et esprits libres, ton IA t\'aide à concevoir, affiner et transcender tes idées.',
-                'bonus-title': '🎁 Bonus Exclusif',
-                'bonus-text': 'Les 100 premiers membres seront invités à un live exclusif avec moi Diegz Mark\'s, où je montrerai ma méthode complète d\'utilisation Visual Vantage V1, avec mes astuces, mes réglages et mes techniques de création avancée.',
-                creator: '✍️ Diegz Mark\'s — Créateur de GenerateToBeYou',
-                copyright: '© 2025 GenerateToBeYou - Tous droits réservés.',
-                legal1: '📘 Conditions Générales d\'Utilisation',
-                legal2: '📗 Conditions Générales de Vente',
-                legal3: '📙 Politique de Confidentialité & RGPD'
-            },
-            en: {
-                'choose-lang': 'Choose your language',
-                badge: '✨ FIRST 100 MEMBERS ONLY',
-                subtitle: 'You\'re among the first 100 to unlock the Gold Access Edition',
-                'feature1-title': 'Exclusive Access',
-                'feature1-text': 'Welcome to Visual Vantage V1, your personal AI assistant for augmented creation and cinematic realism.',
-                'feature2-title': 'Prompt Architect V1',
-                'feature2-text': 'Inspired by architecture, cinema, and photography, bringing your visions to life through adaptive precision and creative flow.',
-                'feature3-title': 'Cinematic Realism',
-                'feature3-text': 'It learns from your style, adapts to your preferences, and evolves with you to create stunning visual content.',
-                'price-label': 'Limited Gold Access Offer',
-                'per-month': '/month',
-                'price-detail': '(price shown excluding taxes - limited to first 100 members)',
-                cta: '👉 Join the Gold Access Edition',
-                'about-title': '💡 About GenerateToBeYou',
-                'about-text1': 'GenerateToBeYou is where human instinct meets AI precision.',
-                'about-text2': 'Built for creators, designers, and visionaries, your AI grows with you — helping you create, refine, and evolve your vision.',
-                'bonus-title': '🎁 Exclusive Bonus',
-                'bonus-text': 'The first 100 members will be invited to an exclusive live session with me Diegz Mark\'s, where I\'ll reveal my full workflow with Visual Vantage V1, including advanced tips, creative techniques, and personal setup insights.',
-                creator: '✍️ Diegz Mark\'s — Founder of GenerateToBeYou',
-                copyright: '© 2025 GenerateToBeYou - All rights reserved.',
-                legal1: '📘 Terms of Use',
-                legal2: '📗 Terms of Sale',
-                legal3: '📙 Privacy Policy & GDPR'
-            }
-        };
+  <script>
+  const LANG_KEY = 'gtby_lang';
 
-        const langPopup = document.getElementById('langPopup');
-        const mainContent = document.getElementById('mainContent');
-        const langOptions = document.querySelectorAll('.lang-option');
+  const translations = {
+      fr: {
+          'choose-lang': 'Choisissez votre langue',
+          badge: '✨ 100 PREMIERS MEMBRES SEULEMENT',
+          subtitle: 'Tu fais partie des 100 premiers à débloquer la Gold Access Edition',
+          'feature1-title': 'Accès Exclusif',
+          'feature1-text': 'Tu viens de découvrir l\'un des accès limités à la Gold Access Edition. Ton assistant IA personnel pensé pour la création visuelle augmentée.',
+          'feature2-title': 'Prompt Architect V1',
+          'feature2-text': 'S\'inspire de l\'architecture, du cinéma et de la photographie pour donner vie à tes idées. Il apprend de ton style et s\'adapte à ta sensibilité.',
+          'feature3-title': 'Réalisme Cinématique',
+          'feature3-text': 'Crée avec toi des visuels d\'une qualité professionnelle, avec une attention aux détails digne du cinéma et de la photographie d\'art.',
+          'price-label': 'Offre Limitée Gold Access',
+          'per-month': '/mois',
+          'price-detail': '(hors taxes - limité aux 100 premiers)',
+          cta: '👉 Rejoindre la Gold Access Edition',
+          'about-title': '💡 À propos de GenerateToBeYou',
+          'about-text1': 'GenerateToBeYou, c\'est la rencontre entre l\'instinct humain et la précision de l\'IA.',
+          'about-text2': 'Pensé pour les créateurs, designers et esprits libres, ton IA t\'aide à concevoir, affiner et transcender tes idées.',
+          'bonus-title': '🎁 Bonus Exclusif',
+          'bonus-text': 'Les 100 premiers membres seront invités à un live exclusif avec moi Diegz Mark\'s, où je montrerai ma méthode complète d\'utilisation Visual Vantage V1, avec mes astuces, mes réglages et mes techniques de création avancée.',
+          creator: '✍️ Diegz Mark\'s — Créateur de GenerateToBeYou',
+          copyright: '© 2025 GenerateToBeYou - Tous droits réservés.',
+          legal1: '📘 Conditions Générales d\'Utilisation',
+          legal2: '📗 Conditions Générales de Vente',
+          legal3: '📙 Politique de Confidentialité & RGPD'
+      },
+      en: {
+          'choose-lang': 'Choose your language',
+          badge: '✨ FIRST 100 MEMBERS ONLY',
+          subtitle: 'You\'re among the first 100 to unlock the Gold Access Edition',
+          'feature1-title': 'Exclusive Access',
+          'feature1-text': 'Welcome to Visual Vantage V1, your personal AI assistant for augmented creation and cinematic realism.',
+          'feature2-title': 'Prompt Architect V1',
+          'feature2-text': 'Inspired by architecture, cinema, and photography, bringing your visions to life through adaptive precision and creative flow.',
+          'feature3-title': 'Cinematic Realism',
+          'feature3-text': 'It learns from your style, adapts to your preferences, and evolves with you to create stunning visual content.',
+          'price-label': 'Limited Gold Access Offer',
+          'per-month': '/month',
+          'price-detail': '(price shown excluding taxes - limited to first 100 members)',
+          cta: '👉 Join the Gold Access Edition',
+          'about-title': '💡 About GenerateToBeYou',
+          'about-text1': 'GenerateToBeYou is where human instinct meets AI precision.',
+          'about-text2': 'Built for creators, designers, and visionaries, your AI grows with you — helping you create, refine, and evolve your vision.',
+          'bonus-title': '🎁 Exclusive Bonus',
+          'bonus-text': 'The first 100 members will be invited to an exclusive live session with me Diegz Mark\'s, where I\'ll reveal my full workflow with Visual Vantage V1, including advanced tips, creative techniques, and personal setup insights.',
+          creator: '✍️ Diegz Mark\'s — Founder of GenerateToBeYou',
+          copyright: '© 2025 GenerateToBeYou - All rights reserved.',
+          legal1: '📘 Terms of Use',
+          legal2: '📗 Terms of Sale',
+          legal3: '📙 Privacy Policy & GDPR'
+      }
+  };
 
-        langOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                const lang = option.dataset.lang;
-                
-                // Appliquer les traductions
-                document.querySelectorAll('[data-translate]').forEach(element => {
-                    const key = element.dataset.translate;
-                    if (translations[lang][key]) {
-                        element.textContent = translations[lang][key];
-                    }
-                });
-                
-                document.documentElement.lang = lang;
-                
-                // Masquer popup et afficher contenu
-                langPopup.classList.add('hidden');
-                setTimeout(() => {
-                    mainContent.classList.add('visible');
-                }, 100);
-            });
-        });
-    </script>
+  const langPopup = document.getElementById('langPopup');
+  const mainContent = document.getElementById('mainContent');
+  const langOptions = document.querySelectorAll('.lang-option');
+
+  function applyLanguage(lang) {
+      const dict = translations[lang];
+      if (!dict) return;
+
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-translate]').forEach(element => {
+          const key = element.dataset.translate;
+          if (dict[key]) {
+              element.textContent = dict[key];
+          }
+      });
+  }
+
+  // 1) Vérifier si une langue est déjà enregistrée
+  const savedLang = localStorage.getItem(LANG_KEY);
+  if (savedLang && translations[savedLang]) {
+      applyLanguage(savedLang);
+      // on cache direct la popup et on montre le contenu
+      langPopup.classList.add('hidden');
+      mainContent.classList.add('visible');
+  }
+
+  // 2) Gestion du clic sur les boutons de langue
+  langOptions.forEach(option => {
+      option.addEventListener('click', () => {
+          const lang = option.dataset.lang;
+
+          // Appliquer les traductions
+          applyLanguage(lang);
+
+          // Sauvegarder la langue pour les autres pages
+          localStorage.setItem(LANG_KEY, lang);
+
+          // Masquer popup et afficher contenu
+          langPopup.classList.add('hidden');
+          setTimeout(() => {
+              mainContent.classList.add('visible');
+          }, 100);
+      });
+  });
+</script>
+    
 </body>
 </html>
