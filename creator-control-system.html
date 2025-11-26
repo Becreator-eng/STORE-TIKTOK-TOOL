@@ -1,351 +1,415 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Creator Control System – Access Unlocked</title>
-  <meta name="description" content="Thank you for your purchase. Access your three AI assistants: Post Manager, ViralProPost and Visual Vantage V1." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTBY Store – Creator Systems</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #050507;
-      color: #e8e8e8;
-      line-height: 1.6;
-      overflow-x: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: radial-gradient(circle at top, #111827 0%, #020617 55%, #000 100%);
+      color:#f9fafb;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
     }
 
+    main { flex:1; }
+
     .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
+      max-width:960px;
+      margin:0 auto;
+      padding:32px 16px 40px;
     }
 
     /* HERO */
     .hero {
-      padding: 80px 0 40px;
-      position: relative;
-      text-align: center;
+      text-align:center;
+      margin-bottom:40px;
+      margin-top:32px;
+    }
+    .hero-tag {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 16px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.4);
+      background:rgba(15,23,42,0.9);
+      font-size:12px;
+      color:#e5e7eb;
+      margin-bottom:14px;
+    }
+    .hero h1 {
+      font-size:28px;
+      line-height:1.2;
+      margin-bottom:10px;
+      letter-spacing:0.04em;
+      text-transform:uppercase;
+    }
+    .hero h1 span {
+      background:linear-gradient(135deg,#e5e7eb,#a855f7);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .hero p {
+      max-width:520px;
+      margin:0 auto;
+      font-size:14px;
+      color:#9ca3af;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -200px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 900px;
-      height: 900px;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.16) 0%, transparent 70%);
-      pointer-events: none;
-      opacity: 0.8;
+    /* CARDS – LAYOUT VERTICAL */
+    .grid {
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+      max-width:720px;
+      margin:32px auto 0;
+    }
+    .card {
+      position:relative;
+      padding:24px 22px 22px;
+      border-radius:22px;
+      background:radial-gradient(circle at top left, rgba(168,85,247,0.25), transparent 55%),
+                 rgba(15,23,42,0.96);
+      border:1px solid rgba(55,65,81,0.9);
+      box-shadow:0 24px 60px rgba(15,23,42,0.9);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      overflow:hidden;
+    }
+    .card.gold {
+      background:radial-gradient(circle at top left, rgba(250,204,21,0.2), transparent 55%),
+                 rgba(15,23,42,0.96);
+      border-color:rgba(250,204,21,0.5);
+    }
+    .card-label {
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:0.16em;
+      color:#9ca3af;
+    }
+    .card-title {
+      font-size:18px;
+      font-weight:600;
+    }
+    .card-title span {
+      background:linear-gradient(135deg,#e5e7eb,#a855f7);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .card.gold .card-title span {
+      background:linear-gradient(135deg,#fde68a,#facc15);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .card-sub {
+      font-size:13px;
+      color:#9ca3af;
+    }
+    .card-meta {
+      font-size:12px;
+      color:#a5b4fc;
+    }
+    .price {
+      font-size:16px;
+      font-weight:600;
+      margin-top:4px;
+    }
+    .pill-small {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      border-radius:999px;
+      border:1px solid rgba(129,140,248,0.5);
+      background:rgba(15,23,42,0.9);
+      padding:3px 8px;
+      font-size:11px;
+      color:#c7d2fe;
+    }
+    .pill-small.gold {
+      border-color:rgba(250,204,21,0.7);
+      color:#facc15;
     }
 
-    .hero-inner {
-      position: relative;
-      z-index: 1;
+    .btn-row {
+      margin-top:14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      padding:10px 18px;
+      border-radius:999px;
+      border:none;
+      cursor:pointer;
+      font-size:13px;
+      font-weight:500;
+      text-decoration:none;
+      background:#7c3aed;
+      color:#f9fafb;
+      box-shadow:0 18px 40px rgba(124,58,237,0.6);
+      transition:transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+      white-space:nowrap;
+    }
+    .card.gold .btn {
+      background:#facc15;
+      color:#111827;
+      box-shadow:0 18px 40px rgba(250,204,21,0.35);
+    }
+    .btn span.icon {
+      font-size:15px;
+    }
+    .btn:hover {
+      transform:translateY(-1px);
+      box-shadow:0 22px 50px rgba(124,58,237,0.8);
+    }
+    .card.gold .btn:hover {
+      box-shadow:0 22px 50px rgba(250,204,21,0.5);
     }
 
-    h1 {
-      font-size: clamp(2.3rem, 5vw, 3.4rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
-      line-height: 1.1;
-      background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-subtitle {
-      font-size: 1.1rem;
-      color: #b3b3b3;
-      max-width: 640px;
-      margin: 0 auto 24px;
-    }
-
-    .hero-note {
-      font-size: 0.9rem;
-      color: #8c8c8c;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .hero-note span {
-      color: #c4b5fd;
-      font-weight: 500;
-    }
-
-    /* ACCESS PILL */
-    .access-strip {
-      margin-bottom: 30px;
-    }
-
-    .access-pill-wrapper {
-      display: flex;
-      justify-content: center;
-    }
-
-    .access-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 26px;
-      border-radius: 999px;
-      border: 1px solid rgba(139, 92, 246, 0.6);
-      background: radial-gradient(circle at 0 0, rgba(139, 92, 246, 0.35), transparent 60%);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #e5ddff;
-      box-shadow: 0 0 26px rgba(76, 29, 149, 0.7);
-    }
-
-    .access-pill-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 14px rgba(34, 197, 94, 0.9);
-    }
-
-    /* ASSISTANT SECTION */
-    section.assistants {
-      padding: 20px 0 90px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    .section-title h2 {
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-
-    .section-title p {
-      font-size: 0.98rem;
-      color: #a1a1aa;
-    }
-
-    .assist-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
-      margin-top: 10px;
-    }
-
-    .assist-card {
-      background: radial-gradient(circle at top, rgba(139, 92, 246, 0.16) 0%, #050507 55%);
-      border-radius: 18px;
-      padding: 26px 22px 24px;
-      border: 1px solid rgba(148, 163, 184, 0.26);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      box-shadow: 0 22px 45px rgba(15, 23, 42, 0.8);
-    }
-
-    .assist-badge {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #a5b4fc;
-      margin-bottom: 4px;
-    }
-
-    .assist-name {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #f9fafb;
-    }
-
-    .assist-role {
-      font-size: 0.92rem;
-      color: #a1a1aa;
-      margin-bottom: 6px;
-    }
-
-    .assist-desc {
-      font-size: 0.9rem;
-      color: #d4d4d8;
-      line-height: 1.7;
-    }
-
-    .assist-meta {
-      font-size: 0.82rem;
-      color: #9ca3af;
-      margin-top: auto;
-      padding-top: 6px;
-    }
-
-    .assist-meta span {
-      color: #c4b5fd;
-      font-weight: 500;
-    }
-
-    .assist-cta { margin-top: 12px; }
-
-    .assist-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(139, 92, 246, 0.4);
-      background: rgba(12, 10, 24, 0.9);
-      color: #f9fafb;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
-
-    .assist-btn:hover {
-      background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-      border-color: #8b5cf6;
-      transform: translateY(-1px);
-      box-shadow: 0 14px 32px rgba(76, 29, 149, 0.55);
-    }
-
-    /* FOOTER */
     footer {
-      border-top: 1px solid rgba(31, 41, 55, 0.9);
-      padding: 18px 0 26px;
-      font-size: 0.8rem;
-      color: #737373;
-      text-align: center;
+      border-top:1px solid rgba(31,41,55,0.95);
+      padding:16px;
+      text-align:center;
+      font-size:11px;
+      color:#6b7280;
+      background:rgba(3,7,18,0.98);
     }
 
-    footer span.brand {
-      color: #c4b5fd;
-      font-weight: 500;
+    @media (max-width:640px){
+      .hero h1 { font-size:22px; }
+      .card { padding:20px 18px; }
+    }
+
+    /* LANGUAGE POPUP */
+    .lang-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.92);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:50;
+    }
+    .lang-overlay.hidden{ display:none; }
+
+    .lang-box{
+      background:#020617;
+      border-radius:18px;
+      padding:28px 22px 24px;
+      text-align:center;
+      border:1px solid rgba(129,140,248,0.5);
+      box-shadow:0 26px 60px rgba(0,0,0,0.9);
+      max-width:360px;
+      width:90%;
+    }
+    .lang-title{
+      font-size:1.3rem;
+      font-weight:600;
+      margin-bottom:6px;
+    }
+    .lang-subtitle{
+      font-size:0.9rem;
+      color:#9ca3af;
+      margin-bottom:20px;
+    }
+    .lang-buttons{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+    }
+    .lang-btn{
+      flex:1;
+      min-width:130px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.6);
+      background:#020617;
+      color:#e5e7eb;
+      font-size:0.95rem;
+      font-weight:500;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      transition:all .2s ease;
+    }
+    .lang-btn span.flag{ font-size:1.2rem; }
+    .lang-btn:hover{
+      background:linear-gradient(135deg,#8b5cf6 0%,#6d28d9 100%);
+      border-color:#8b5cf6;
+      transform:translateY(-1px);
     }
   </style>
 </head>
-
 <body>
+  <!-- POPUP LANGUE -->
+  <div class="lang-overlay" id="langOverlay">
+    <div class="lang-box">
+      <div class="lang-title" id="langTitle">Choisissez votre langue</div>
+      <div class="lang-subtitle" id="langSubtitle">
+        Select your language to continue to the GenerateToBeYou Store.
+      </div>
+      <div class="lang-buttons">
+        <button class="lang-btn" data-lang="fr">
+          <span class="flag">🇫🇷</span><span>Français</span>
+        </button>
+        <button class="lang-btn" data-lang="en">
+          <span class="flag">🇬🇧</span><span>English</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
-  <!-- HERO -->
-  <main>
-    <section class="hero">
-      <div class="hero-inner container">
-
-        <h1>Thank you. Your Creator Control System is now live.</h1>
-
-        <p class="hero-subtitle">
-          You now have full access to your 3 AI assistants dedicated to your growth as a creator.
-          Use them at your rhythm — and let the system work with you.
+  <main id="mainContent" style="opacity:0; transition:opacity .3s ease;">
+    <div class="container">
+      <section class="hero">
+        <div class="hero-tag" data-i18n="hero_tag">GenerateToBeYou Store</div>
+        <h1><span data-i18n="hero_title">Choose your control system.</span></h1>
+        <p data-i18n="hero_sub">
+          Sélectionne l’expérience qui correspond à ton niveau : système complet pour tout contrôler,
+          ou assistant visuel spécialisé pour accélérer ta création.
         </p>
+      </section>
 
-        <p class="hero-note">
-          You can bookmark this page to come back anytime.<br />
-          <span>No hidden steps. Just your assistants, ready.</span>
-        </p>
-
-        <!-- ACCESS PILL -->
-        <div style="margin: 28px 0 10px; display: flex; justify-content: center;">
-          <div class="access-pill">
-            <span class="access-pill-dot"></span>
-            <span>ACCESS ACTIVATED</span>
+      <section class="grid">
+        <!-- CREATOR CONTROL SYSTEM -->
+        <article class="card">
+          <div class="card-label" data-i18n="ccs_label">Signature System</div>
+          <div class="card-title"><span data-i18n="ccs_title">The Creator Control System</span></div>
+          <p class="card-sub" data-i18n="ccs_sub">
+            Système complet pour structurer ta création, contrôler ton style et scaler sans te diluer.
+          </p>
+          <div class="card-meta" data-i18n="ccs_meta">
+            3 assistants · 15 IA spécialisées · système entier clé en main.
           </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ASSISTANTS GRID -->
-    <section class="assistants">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Your 3 AI assistants</h2>
-          <p>Each one covers a part of your creative system. Together, they form your full Creator Control System.</p>
-        </div>
-
-        <div class="assist-grid">
-
-          <!-- ASSISTANT 1 -->
-          <article class="assist-card">
-            <div class="assist-badge">Assistant 01 · Strategy</div>
-            <div class="assist-name">Post Manager</div>
-            <div class="assist-role">Strategy, planning & growth for your content.</div>
-            <p class="assist-desc">
-              Define your positioning, plan your series, structure your posting rhythm and align your content with your goals.
-              Post Manager thinks like a strategist so you can focus on creating.
-            </p>
-            <p class="assist-meta">
-              Best used for: <span>content roadmap, series planning, growth strategy.</span>
-            </p>
-            <div class="assist-cta">
-              <a class="assist-btn" href="https://chatgpt.com/g/g-6927401c158481918adc1e420f5e715e-post-manager" target="_blank">
-                <span>↗</span> Open Post Manager
-              </a>
+          <div class="btn-row">
+            <div>
+              <div class="pill-small" data-i18n="ccs_pill">
+                🎯 One-time • Premium access
+              </div>
+              <div class="price" data-i18n="ccs_price">$1,692 – paiement unique</div>
             </div>
-          </article>
+            <a class="btn" href="creator-control-system.html">
+              <span data-i18n="ccs_btn">Voir l’expérience</span>
+              <span class="icon">→</span>
+            </a>
+          </div>
+        </article>
 
-          <!-- ASSISTANT 2 -->
-          <article class="assist-card">
-            <div class="assist-badge">Assistant 02 · Content</div>
-            <div class="assist-name">ViralProPost</div>
-            <div class="assist-role">Post creation for all platforms.</div>
-            <p class="assist-desc">
-              Turn your ideas, notes or visuals into structured posts adapted to TikTok, Instagram, X, LinkedIn and more.
-              ViralProPost helps you write, refine and adapt your content to every format.
-            </p>
-            <p class="assist-meta">
-              Best used for: <span>scripts, captions, hooks, multi-platform posts.</span>
-            </p>
-            <div class="assist-cta">
-              <a class="assist-btn" href="https://chatgpt.com/g/g-67c38055abe881918be02565dcc9f448-viralpost-pro" target="_blank">
-                <span>↗</span> Open ViralProPost
-              </a>
+        <!-- VISUAL VANTAGE -->
+        <article class="card gold">
+          <div class="card-label" data-i18n="vv_label">Gold Access Assistant</div>
+          <div class="card-title"><span data-i18n="vv_title">Visual Vantage V1</span></div>
+          <p class="card-sub" data-i18n="vv_sub">
+            Assistant IA visuel orienté cinéma & photo, pensé pour créer des visuels premium à la chaîne.
+          </p>
+          <div class="card-meta" data-i18n="vv_meta">
+            Prompt Architect · réalisme cinématique · ajusté à ton style.
+          </div>
+          <div class="btn-row">
+            <div>
+              <div class="pill-small gold" data-i18n="vv_pill">
+                ✨ 100 premiers membres
+              </div>
+              <div class="price" data-i18n="vv_price">47 $ / mois</div>
             </div>
-          </article>
-
-          <!-- ASSISTANT 3 -->
-          <article class="assist-card">
-            <div class="assist-badge">Assistant 03 · Visual</div>
-            <div class="assist-name">Visual Vantage V1</div>
-            <div class="assist-role">Visuals, prompts & aesthetic consistency.</div>
-            <p class="assist-desc">
-              Generate powerful prompts, refine your visual direction and maintain a strong, coherent aesthetic across your work.
-              Visual Vantage helps you build a recognisable visual universe.
-            </p>
-            <p class="assist-meta">
-              Best used for: <span>Midjourney prompts, series consistency, mood & style.</span>
-            </p>
-            <div class="assist-cta">
-              <a class="assist-btn" href="https://chatgpt.com/g/g-69132025ef548191bc3e60d94751f9d7-visual-vantage-v1" target="_blank">
-                <span>↗</span> Open Visual Vantage V1
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
+            <a class="btn" href="visual-vantage.html">
+              <span data-i18n="vv_btn">Voir la Gold Edition</span>
+              <span class="icon">→</span>
+            </a>
+          </div>
+        </article>
+      </section>
+    </div>
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <p>
-        Built by <span class="brand">GTBY – Generate To Be You</span>.
-        Think. Create. Evolve. Take Control.
-      </p>
-    </div>
+    © <span id="year"></span> GenerateToBeYou — All rights reserved.
   </footer>
 
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const translations = {
+      fr: {
+        hero_tag: "GenerateToBeYou Store",
+        hero_title: "Choisis ton système de contrôle.",
+        hero_sub: "Sélectionne l’expérience qui correspond à ton niveau : système complet pour tout contrôler, ou assistant visuel spécialisé pour accélérer ta création.",
+        ccs_label: "Signature System",
+        ccs_title: "The Creator Control System",
+        ccs_sub: "Système complet pour structurer ta création, contrôler ton style et scaler sans te diluer.",
+        ccs_meta: "3 assistants · 15 IA spécialisées · système entier clé en main.",
+        ccs_pill: "🎯 One-time • Premium access",
+        ccs_price: "1 692 $ – paiement unique",
+        ccs_btn: "Voir l’expérience",
+        vv_label: "Gold Access Assistant",
+        vv_title: "Visual Vantage V1",
+        vv_sub: "Assistant IA visuel orienté cinéma & photo, pensé pour créer des visuels premium à la chaîne.",
+        vv_meta: "Prompt Architect · réalisme cinématique · ajusté à ton style.",
+        vv_pill: "✨ 100 premiers membres",
+        vv_price: "47 $ / mois",
+        vv_btn: "Voir la Gold Edition"
+      },
+      en: {
+        hero_tag: "GenerateToBeYou Store",
+        hero_title: "Choose your control system.",
+        hero_sub: "Choose the experience that matches your level: a full system to control everything, or a visual assistant to accelerate creation.",
+        ccs_label: "Signature System",
+        ccs_title: "The Creator Control System",
+        ccs_sub: "A complete system to structure your creation, control your style, and scale without losing yourself.",
+        ccs_meta: "3 assistants · 15 AI specialists · full system included.",
+        ccs_pill: "🎯 One-time • Premium access",
+        ccs_price: "$1,692 – one-time payment",
+        ccs_btn: "View experience",
+        vv_label: "Gold Access Assistant",
+        vv_title: "Visual Vantage V1",
+        vv_sub: "Visual AI assistant inspired by cinema & photography, built to generate premium visuals on demand.",
+        vv_meta: "Prompt Architect · cinematic realism · tuned to your style.",
+        vv_pill: "✨ First 100 members",
+        vv_price: "$47 / month",
+        vv_btn: "View Gold Edition"
+      }
+    };
+
+    const overlay = document.getElementById('langOverlay');
+    const mainContent = document.getElementById('mainContent');
+    const langButtons = document.querySelectorAll('.lang-btn');
+
+    function applyLanguage(lang){
+      const dict = translations[lang] || translations.fr;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+    }
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        applyLanguage(lang);
+        overlay.classList.add('hidden');
+        mainContent.style.opacity = '1';
+      });
+    });
+
+    // langue par défaut FR
+    applyLanguage('fr');
+  </script>
 </body>
 </html>
+
