@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Vantage V1 – Access Unlocked</title>
+  <meta name="description" content="Thank you for your purchase. Your Visual Vantage V1 access is now active." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #1f1303 0%, #050507 55%);
+      color: #f5f5f5;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 0 40px;
+    }
+
+    .hero-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.02rem;
+      color: #d4d4d4;
+      margin-bottom: 22px;
+    }
+
+    .hero-note {
+      font-size: 0.9rem;
+      color: #a1a1a1;
+      margin-bottom: 20px;
+    }
+
+    .hero-note span {
+      color: #facc6b;
+      font-weight: 500;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(250, 204, 21, 0.5);
+      background: rgba(12, 10, 3, 0.95);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #facc6b;
+      margin-top: 10px;
+    }
+
+    .hero-tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
+    }
+
+    /* ASSISTANT SECTION */
+    .assistant-section {
+      padding: 10px 0 90px;
+    }
+
+    .assistant-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .assistant-header h2 {
+      font-size: 1.7rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .assistant-header p {
+      font-size: 0.96rem;
+      color: #d4d4d4;
+    }
+
+    .assistant-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .assistant-card {
+      background: radial-gradient(circle at top left, rgba(250, 204, 21, 0.22) 0%, #020617 55%);
+      border-radius: 20px;
+      padding: 28px 26px 24px;
+      border: 1px solid rgba(250, 204, 21, 0.4);
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.9);
+    }
+
+    .assistant-badge {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #facc6b;
+      margin-bottom: 10px;
+    }
+
+    .assistant-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .assistant-role {
+      font-size: 0.94rem;
+      color: #e5e5e5;
+      margin-bottom: 14px;
+    }
+
+    .assistant-desc {
+      font-size: 0.9rem;
+      color: #e4e4e7;
+      margin-bottom: 16px;
+    }
+
+    .assistant-meta {
+      font-size: 0.86rem;
+      color: #facc6b;
+      margin-bottom: 16px;
+    }
+
+    .assistant-meta span {
+      color: #fef3c7;
+      font-weight: 500;
+    }
+
+    .assistant-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(250, 204, 21, 0.7);
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      color: #111827;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .25s ease;
+    }
+
+    .assistant-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 35px rgba(234, 179, 8, 0.55);
+    }
+
+    footer {
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 18px 0 26px;
+      font-size: .8rem;
+      color: #a3a3a3;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    footer .brand {
+      color: #facc6b;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner container">
+
+        <h1>Thank you. Your Visual Vantage V1 access is now live.</h1>
+
+        <p class="hero-subtitle">
+          You now have full access to your visual AI assistant dedicated to cinematic, premium images.
+          Use it at your rhythm — and let Visual Vantage shape your visual universe.
+        </p>
+
+        <p class="hero-note">
+          You can bookmark this page to come back anytime.<br />
+          <span>No hidden steps. Your assistant is ready.</span>
+        </p>
+
+        <div style="margin: 28px 0 10px; display: flex; justify-content: center;">
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            <span>ACCESS ACTIVATED</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ASSISTANT CARD -->
+    <section class="assistant-section">
+      <div class="assistant-wrapper">
+
+        <div class="assistant-header">
+          <h2>Your Visual AI assistant</h2>
+          <p>Everything you need to design cinematic, consistent visuals — in one assistant.</p>
+        </div>
+
+        <article class="assistant-card">
+          <div class="assistant-badge">Gold Access Assistant</div>
+
+          <div class="assistant-name">Visual Vantage V1</div>
+          <div class="assistant-role">Visuals, prompts & aesthetic consistency.</div>
+
+          <p class="assistant-desc">
+            Generate powerful Midjourney prompts, refine your visual direction and keep a strong,
+            coherent aesthetic across every series you build. Visual Vantage helps you create visuals
+            that look premium and feel like you.
+          </p>
+
+          <p class="assistant-meta">
+            Best used for: <span>cinematic prompts, series consistency, art direction, mood & style.</span>
+          </p>
+
+          <div class="assistant-cta">
+            <a
+              class="assistant-btn"
+              href="https://chatgpt.com/g/g-69132025ef548191bc3e60d94751f9d7-visual-vantage-v1"
+              target="_blank"
+            >
+              ↗ Open Visual Vantage V1
+            </a>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        Built by <span class="brand">GTBY – Generate To Be You</span>.  
+        Think. Create. Evolve. Take Control.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
