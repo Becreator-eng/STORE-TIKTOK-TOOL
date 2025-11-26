@@ -61,6 +61,49 @@
       color:#9ca3af;
     }
 
+    /* MOCKUPS SOUS LE HERO */
+    .mockup-section {
+      margin:24px auto 40px;
+      max-width:960px;
+    }
+
+    .mockup-grid {
+      display:flex;
+      flex-wrap:wrap;
+      gap:24px;
+      justify-content:center;
+    }
+
+    .mockup-card {
+      flex:1 1 260px;
+      max-width:420px;
+      background:radial-gradient(circle at top left, rgba(148,163,184,0.18), transparent 55%),
+                 rgba(15,23,42,0.97);
+      border-radius:22px;
+      border:1px solid rgba(55,65,81,0.9);
+      padding:14px 14px 18px;
+      box-shadow:0 20px 50px rgba(15,23,42,0.9);
+    }
+
+    .mockup-label {
+      font-size:11px;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:#9ca3af;
+      margin-bottom:8px;
+    }
+
+    .mockup-label span {
+      font-weight:600;
+      color:#e5e7eb;
+    }
+
+    .mockup-img {
+      width:100%;
+      display:block;
+      border-radius:18px;
+    }
+
     /* CARDS – LAYOUT VERTICAL */
     .grid {
       display:flex;
@@ -190,6 +233,7 @@
     @media (max-width:640px){
       .hero h1 { font-size:22px; }
       .card { padding:20px 18px; }
+      .mockup-section { margin:16px auto 32px; }
     }
 
     /* LANGUAGE POPUP */
@@ -282,6 +326,33 @@
           Sélectionne l’expérience qui correspond à ton niveau : système complet pour tout contrôler,
           ou assistant visuel spécialisé pour accélérer ta création.
         </p>
+      </section>
+
+      <!-- MOCKUPS DES PRODUITS -->
+      <section class="mockup-section">
+        <div class="mockup-grid">
+          <div class="mockup-card">
+            <div class="mockup-label">
+              Preview • <span>Creator Control System</span>
+            </div>
+            <img
+              src="mockup-creator-control.png"
+              alt="Mockup du Creator Control System"
+              class="mockup-img"
+            />
+          </div>
+
+          <div class="mockup-card">
+            <div class="mockup-label">
+              Preview • <span>Visual Vantage V1</span>
+            </div>
+            <img
+              src="mockup-visual-vantage.png"
+              alt="Mockup de Visual Vantage V1"
+              class="mockup-img"
+            />
+          </div>
+        </div>
       </section>
 
       <section class="grid">
@@ -412,4 +483,3 @@
   </script>
 </body>
 </html>
-
