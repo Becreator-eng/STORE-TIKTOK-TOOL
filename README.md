@@ -1,2 +1,2 @@
-# STORE-TIKTOK-TOOL
+# STORE-AI-TOOL
 Boutique bot vendu sur tiktok 
