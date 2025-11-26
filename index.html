@@ -27,7 +27,7 @@
     /* HERO */
     .hero {
       text-align:center;
-      margin-bottom:40px;
+      margin-bottom:32px;
       margin-top:32px;
     }
     .hero-tag {
@@ -61,133 +61,168 @@
       color:#9ca3af;
     }
 
-    /* MOCKUPS SOUS LE HERO */
-    .mockup-section {
-      margin:24px auto 40px;
-      max-width:960px;
-    }
-
-    .mockup-grid {
+    /* CHOIX RAPIDE (2 cartes cliquables) */
+    .choice-grid {
       display:flex;
       flex-wrap:wrap;
-      gap:24px;
+      gap:16px;
       justify-content:center;
+      margin:28px auto 8px;
+      max-width:720px;
+    }
+    .choice-card {
+      flex:1 1 260px;
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid rgba(55,65,81,0.9);
+      background:rgba(15,23,42,0.96);
+      box-shadow:0 16px 40px rgba(15,23,42,0.9);
+      cursor:pointer;
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      text-align:left;
+    }
+    .choice-card.gold {
+      border-color:rgba(250,204,21,0.5);
+      background:radial-gradient(circle at top left, rgba(250,204,21,0.18), transparent 55%),
+                 rgba(15,23,42,0.96);
+    }
+    .choice-label {
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:0.16em;
+      color:#9ca3af;
+      margin-bottom:4px;
+    }
+    .choice-title {
+      font-size:15px;
+      font-weight:600;
+      margin-bottom:4px;
+    }
+    .choice-title span {
+      background:linear-gradient(135deg,#e5e7eb,#a855f7);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .choice-card.gold .choice-title span {
+      background:linear-gradient(135deg,#fde68a,#facc15);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .choice-sub {
+      font-size:12px;
+      color:#9ca3af;
+    }
+    .choice-card:hover {
+      transform:translateY(-2px);
+      border-color:#8b5cf6;
+      box-shadow:0 22px 55px rgba(55,65,81,0.85);
     }
 
-    .mockup-card {
-      flex:1 1 260px;
-      max-width:420px;
+    /* SECTIONS PRODUITS */
+    .product-section {
+      padding:40px 0 10px;
+      border-top:1px solid rgba(31,41,55,0.95);
+    }
+
+    .product-heading {
+      font-size:14px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:#9ca3af;
+      margin-bottom:6px;
+    }
+
+    .product-title {
+      font-size:22px;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+
+    .product-title span {
+      background:linear-gradient(135deg,#e5e7eb,#a855f7);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .product-section.gold .product-title span {
+      background:linear-gradient(135deg,#fde68a,#facc15);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .product-layout {
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+      gap:28px;
+      align-items:center;
+      margin-top:18px;
+    }
+
+    .product-media {
       background:radial-gradient(circle at top left, rgba(148,163,184,0.18), transparent 55%),
                  rgba(15,23,42,0.97);
       border-radius:22px;
       border:1px solid rgba(55,65,81,0.9);
-      padding:14px 14px 18px;
+      padding:16px;
       box-shadow:0 20px 50px rgba(15,23,42,0.9);
     }
 
-    .mockup-label {
-      font-size:11px;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      color:#9ca3af;
-      margin-bottom:8px;
-    }
-
-    .mockup-label span {
-      font-weight:600;
-      color:#e5e7eb;
-    }
-
-    .mockup-img {
+    .product-media img {
       width:100%;
       display:block;
       border-radius:18px;
     }
 
-    /* CARDS – LAYOUT VERTICAL */
-    .grid {
-      display:flex;
-      flex-direction:column;
-      gap:24px;
-      max-width:720px;
-      margin:32px auto 0;
+    .product-text p {
+      font-size:14px;
+      color:#d1d5db;
+      margin-bottom:10px;
     }
-    .card {
-      position:relative;
-      padding:24px 22px 22px;
-      border-radius:22px;
-      background:radial-gradient(circle at top left, rgba(168,85,247,0.25), transparent 55%),
-                 rgba(15,23,42,0.96);
-      border:1px solid rgba(55,65,81,0.9);
-      box-shadow:0 24px 60px rgba(15,23,42,0.9);
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      overflow:hidden;
-    }
-    .card.gold {
-      background:radial-gradient(circle at top left, rgba(250,204,21,0.2), transparent 55%),
-                 rgba(15,23,42,0.96);
-      border-color:rgba(250,204,21,0.5);
-    }
-    .card-label {
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:0.16em;
-      color:#9ca3af;
-    }
-    .card-title {
-      font-size:18px;
-      font-weight:600;
-    }
-    .card-title span {
-      background:linear-gradient(135deg,#e5e7eb,#a855f7);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-    .card.gold .card-title span {
-      background:linear-gradient(135deg,#fde68a,#facc15);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-    .card-sub {
+
+    .product-meta {
       font-size:13px;
-      color:#9ca3af;
-    }
-    .card-meta {
-      font-size:12px;
       color:#a5b4fc;
+      margin-top:8px;
     }
-    .price {
+
+    .product-meta span {
+      font-weight:500;
+      color:#e5e7eb;
+    }
+
+    .product-price {
       font-size:16px;
       font-weight:600;
-      margin-top:4px;
+      margin-top:16px;
+      margin-bottom:6px;
     }
-    .pill-small {
+
+    .product-badge {
       display:inline-flex;
       align-items:center;
       gap:6px;
       border-radius:999px;
       border:1px solid rgba(129,140,248,0.5);
       background:rgba(15,23,42,0.9);
-      padding:3px 8px;
+      padding:4px 9px;
       font-size:11px;
       color:#c7d2fe;
+      margin-top:10px;
     }
-    .pill-small.gold {
+    .product-section.gold .product-badge {
       border-color:rgba(250,204,21,0.7);
       color:#facc15;
     }
 
-    .btn-row {
-      margin-top:14px;
+    .product-cta-row {
+      margin-top:16px;
       display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
       flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
     }
-    .btn {
+
+    .btn-primary {
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -205,19 +240,19 @@
       transition:transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
       white-space:nowrap;
     }
-    .card.gold .btn {
+    .product-section.gold .btn-primary {
       background:#facc15;
       color:#111827;
       box-shadow:0 18px 40px rgba(250,204,21,0.35);
     }
-    .btn span.icon {
+    .btn-primary span.icon {
       font-size:15px;
     }
-    .btn:hover {
+    .btn-primary:hover {
       transform:translateY(-1px);
       box-shadow:0 22px 50px rgba(124,58,237,0.8);
     }
-    .card.gold .btn:hover {
+    .product-section.gold .btn-primary:hover {
       box-shadow:0 22px 50px rgba(250,204,21,0.5);
     }
 
@@ -230,10 +265,14 @@
       background:rgba(3,7,18,0.98);
     }
 
-    @media (max-width:640px){
+    @media (max-width:768px){
       .hero h1 { font-size:22px; }
-      .card { padding:20px 18px; }
-      .mockup-section { margin:16px auto 32px; }
+      .product-layout {
+        grid-template-columns:1fr;
+      }
+      .product-media {
+        order:-1; /* mockup en premier sur mobile */
+      }
     }
 
     /* LANGUAGE POPUP */
@@ -319,6 +358,7 @@
 
   <main id="mainContent" style="opacity:0; transition:opacity .3s ease;">
     <div class="container">
+      <!-- HERO -->
       <section class="hero">
         <div class="hero-tag" data-i18n="hero_tag">GenerateToBeYou Store</div>
         <h1><span data-i18n="hero_title">Choose your control system.</span></h1>
@@ -328,82 +368,117 @@
         </p>
       </section>
 
-      <!-- MOCKUPS DES PRODUITS -->
-      <section class="mockup-section">
-        <div class="mockup-grid">
-          <div class="mockup-card">
-            <div class="mockup-label">
-              Preview • <span>Creator Control System</span>
+      <!-- CHOIX RAPIDE -->
+      <section class="choice-grid">
+        <div class="choice-card" onclick="document.getElementById('creator-section').scrollIntoView({behavior:'smooth'})">
+          <div class="choice-label" data-i18n="ccs_choice_label">Signature system</div>
+          <div class="choice-title"><span data-i18n="ccs_choice_title">The Creator Control System</span></div>
+          <p class="choice-sub" data-i18n="ccs_choice_sub">
+            Système complet pour structurer ta création, contrôler ton style et scaler sans te diluer.
+          </p>
+        </div>
+
+        <div class="choice-card gold" onclick="document.getElementById('visual-section').scrollIntoView({behavior:'smooth'})">
+          <div class="choice-label" data-i18n="vv_choice_label">Gold access assistant</div>
+          <div class="choice-title"><span data-i18n="vv_choice_title">Visual Vantage V1</span></div>
+          <p class="choice-sub" data-i18n="vv_choice_sub">
+            Assistant IA visuel orienté cinéma & photo, pensé pour créer des visuels premium à la chaîne.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION CREATOR CONTROL SYSTEM -->
+      <section class="product-section" id="creator-section">
+        <div class="product-heading" data-i18n="ccs_heading">Signature system</div>
+        <div class="product-title">
+          <span data-i18n="ccs_title_main">The Creator Control System</span>
+        </div>
+
+        <div class="product-layout">
+          <div class="product-text">
+            <p data-i18n="ccs_p1">
+              Système complet pour structurer ta création, contrôler ton style et scaler sans te diluer.
+            </p>
+            <p data-i18n="ccs_p2">
+              3 assistants IA qui travaillent ensemble : stratégie, création de posts et cohérence visuelle.
+              Tu gardes le contrôle créatif, le système accélère tout.
+            </p>
+
+            <p class="product-meta" data-i18n="ccs_meta">
+              Inclus : <span>3 assistants · 15 IA spécialisées · système entier clé en main.</span>
+            </p>
+
+            <div class="product-badge" data-i18n="ccs_badge">
+              🎯 One-time • Premium access
             </div>
+
+            <div class="product-price" data-i18n="ccs_price_main">
+              1 692 $ – paiement unique
+            </div>
+
+            <div class="product-cta-row">
+              <a class="btn-primary" href="creator-control-system.html">
+                <span data-i18n="ccs_btn">Voir l’expérience</span>
+                <span class="icon">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="product-media">
             <img
               src="mockup-creator-control.png"
               alt="Mockup du Creator Control System"
-              class="mockup-img"
-            />
-          </div>
-
-          <div class="mockup-card">
-            <div class="mockup-label">
-              Preview • <span>Visual Vantage V1</span>
-            </div>
-            <img
-              src="mockup-visual-vantage.png"
-              alt="Mockup de Visual Vantage V1"
-              class="mockup-img"
             />
           </div>
         </div>
       </section>
 
-      <section class="grid">
-        <!-- CREATOR CONTROL SYSTEM -->
-        <article class="card">
-          <div class="card-label" data-i18n="ccs_label">Signature System</div>
-          <div class="card-title"><span data-i18n="ccs_title">The Creator Control System</span></div>
-          <p class="card-sub" data-i18n="ccs_sub">
-            Système complet pour structurer ta création, contrôler ton style et scaler sans te diluer.
-          </p>
-          <div class="card-meta" data-i18n="ccs_meta">
-            3 assistants · 15 IA spécialisées · système entier clé en main.
-          </div>
-          <div class="btn-row">
-            <div>
-              <div class="pill-small" data-i18n="ccs_pill">
-                🎯 One-time • Premium access
-              </div>
-              <div class="price" data-i18n="ccs_price">$1,692 – paiement unique</div>
-            </div>
-            <a class="btn" href="creator-control-system.html">
-              <span data-i18n="ccs_btn">Voir l’expérience</span>
-              <span class="icon">→</span>
-            </a>
-          </div>
-        </article>
+      <!-- SECTION VISUAL VANTAGE -->
+      <section class="product-section gold" id="visual-section">
+        <div class="product-heading" data-i18n="vv_heading">Gold access assistant</div>
+        <div class="product-title">
+          <span data-i18n="vv_title_main">Visual Vantage V1</span>
+        </div>
 
-        <!-- VISUAL VANTAGE -->
-        <article class="card gold">
-          <div class="card-label" data-i18n="vv_label">Gold Access Assistant</div>
-          <div class="card-title"><span data-i18n="vv_title">Visual Vantage V1</span></div>
-          <p class="card-sub" data-i18n="vv_sub">
-            Assistant IA visuel orienté cinéma & photo, pensé pour créer des visuels premium à la chaîne.
-          </p>
-          <div class="card-meta" data-i18n="vv_meta">
-            Prompt Architect · réalisme cinématique · ajusté à ton style.
-          </div>
-          <div class="btn-row">
-            <div>
-              <div class="pill-small gold" data-i18n="vv_pill">
-                ✨ 100 premiers membres
-              </div>
-              <div class="price" data-i18n="vv_price">47 $ / mois</div>
+        <div class="product-layout">
+          <div class="product-text">
+            <p data-i18n="vv_p1">
+              Assistant IA visuel orienté cinéma & photo, pensé pour créer des visuels premium à la chaîne.
+            </p>
+            <p data-i18n="vv_p2">
+              Génère des prompts Midjourney puissants, garde une direction artistique claire et une
+              esthétique cohérente sur toutes tes séries.
+            </p>
+
+            <p class="product-meta" data-i18n="vv_meta">
+              Best used for : <span>cinematic prompts, séries consistentes, art direction, mood & style.</span>
+            </p>
+
+            <div class="product-badge" data-i18n="vv_badge">
+              ✨ 100 premiers membres
             </div>
-            <a class="btn" href="visual-vantage.html">
-              <span data-i18n="vv_btn">Voir la Gold Edition</span>
-              <span class="icon">→</span>
-            </a>
+
+            <div class="product-price" data-i18n="vv_price_main">
+              47 $ / mois
+            </div>
+
+            <div class="product-cta-row">
+              <a class="btn-primary" href="visual-vantage.html">
+                <span data-i18n="vv_btn">Voir la Gold Edition</span>
+                <span class="icon">→</span>
+              </a>
+            </div>
           </div>
-        </article>
+
+          <div class="product-media">
+            <img
+              src="mockup-visual-vantage.png"
+              alt="Mockup de Visual Vantage V1"
+            />
+          </div>
+        </div>
       </section>
+
     </div>
   </main>
 
@@ -419,38 +494,62 @@
         hero_tag: "GenerateToBeYou Store",
         hero_title: "Choisis ton système de contrôle.",
         hero_sub: "Sélectionne l’expérience qui correspond à ton niveau : système complet pour tout contrôler, ou assistant visuel spécialisé pour accélérer ta création.",
-        ccs_label: "Signature System",
-        ccs_title: "The Creator Control System",
-        ccs_sub: "Système complet pour structurer ta création, contrôler ton style et scaler sans te diluer.",
-        ccs_meta: "3 assistants · 15 IA spécialisées · système entier clé en main.",
-        ccs_pill: "🎯 One-time • Premium access",
-        ccs_price: "1 692 $ – paiement unique",
+
+        ccs_choice_label: "Signature system",
+        ccs_choice_title: "The Creator Control System",
+        ccs_choice_sub: "Système complet pour structurer ta création, contrôler ton style et scaler sans te diluer.",
+
+        vv_choice_label: "Gold access assistant",
+        vv_choice_title: "Visual Vantage V1",
+        vv_choice_sub: "Assistant IA visuel orienté cinéma & photo, pensé pour créer des visuels premium à la chaîne.",
+
+        ccs_heading: "Signature system",
+        ccs_title_main: "The Creator Control System",
+        ccs_p1: "Système complet pour structurer ta création, contrôler ton style et scaler sans te diluer.",
+        ccs_p2: "3 assistants IA qui travaillent ensemble : stratégie, création de posts et cohérence visuelle. Tu gardes le contrôle créatif, le système accélère tout.",
+        ccs_meta: "Inclus : <span>3 assistants · 15 IA spécialisées · système entier clé en main.</span>",
+        ccs_badge: "🎯 One-time • Premium access",
+        ccs_price_main: "1 692 $ – paiement unique",
         ccs_btn: "Voir l’expérience",
-        vv_label: "Gold Access Assistant",
-        vv_title: "Visual Vantage V1",
-        vv_sub: "Assistant IA visuel orienté cinéma & photo, pensé pour créer des visuels premium à la chaîne.",
-        vv_meta: "Prompt Architect · réalisme cinématique · ajusté à ton style.",
-        vv_pill: "✨ 100 premiers membres",
-        vv_price: "47 $ / mois",
+
+        vv_heading: "Gold access assistant",
+        vv_title_main: "Visual Vantage V1",
+        vv_p1: "Assistant IA visuel orienté cinéma & photo, pensé pour créer des visuels premium à la chaîne.",
+        vv_p2: "Génère des prompts Midjourney puissants, garde une direction artistique claire et une esthétique cohérente sur toutes tes séries.",
+        vv_meta: "Best used for : <span>cinematic prompts, séries consistentes, art direction, mood & style.</span>",
+        vv_badge: "✨ 100 premiers membres",
+        vv_price_main: "47 $ / mois",
         vv_btn: "Voir la Gold Edition"
       },
       en: {
         hero_tag: "GenerateToBeYou Store",
         hero_title: "Choose your control system.",
         hero_sub: "Choose the experience that matches your level: a full system to control everything, or a visual assistant to accelerate creation.",
-        ccs_label: "Signature System",
-        ccs_title: "The Creator Control System",
-        ccs_sub: "A complete system to structure your creation, control your style, and scale without losing yourself.",
-        ccs_meta: "3 assistants · 15 AI specialists · full system included.",
-        ccs_pill: "🎯 One-time • Premium access",
-        ccs_price: "$1,692 – one-time payment",
+
+        ccs_choice_label: "Signature system",
+        ccs_choice_title: "The Creator Control System",
+        ccs_choice_sub: "A complete system to structure your creation, control your style and scale without losing yourself.",
+
+        vv_choice_label: "Gold access assistant",
+        vv_choice_title: "Visual Vantage V1",
+        vv_choice_sub: "Visual AI assistant inspired by cinema & photography, built to generate premium visuals on demand.",
+
+        ccs_heading: "Signature system",
+        ccs_title_main: "The Creator Control System",
+        ccs_p1: "A complete system to structure your creation, control your style and scale without diluting your identity.",
+        ccs_p2: "3 AI assistants working together: strategy, post creation and visual consistency. You stay the artist, the system accelerates everything.",
+        ccs_meta: "Includes: <span>3 assistants · 15 AI specialists · full system included.</span>",
+        ccs_badge: "🎯 One-time • Premium access",
+        ccs_price_main: "$1,692 – one-time payment",
         ccs_btn: "View experience",
-        vv_label: "Gold Access Assistant",
-        vv_title: "Visual Vantage V1",
-        vv_sub: "Visual AI assistant inspired by cinema & photography, built to generate premium visuals on demand.",
-        vv_meta: "Prompt Architect · cinematic realism · tuned to your style.",
-        vv_pill: "✨ First 100 members",
-        vv_price: "$47 / month",
+
+        vv_heading: "Gold access assistant",
+        vv_title_main: "Visual Vantage V1",
+        vv_p1: "Visual AI assistant inspired by cinema & photography, built to generate premium visuals at scale.",
+        vv_p2: "Generate powerful Midjourney prompts, keep a clear art direction and a strong, coherent aesthetic across all your series.",
+        vv_meta: "Best used for: <span>cinematic prompts, series consistency, art direction, mood & style.</span>",
+        vv_badge: "✨ First 100 members",
+        vv_price_main: "$47 / month",
         vv_btn: "View Gold Edition"
       }
     };
@@ -465,7 +564,9 @@
 
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (dict[key]) el.textContent = dict[key];
+        if (dict[key]) {
+          el.innerHTML = dict[key];
+        }
       });
     }
 
