@@ -594,169 +594,175 @@
         </div>
     </section>
 
-    <script>
-        const translations = {
-            en: {
-                hero_title: "THE CREATOR CONTROL SYSTEM",
-                hero_signature: "Creation, amplified. You speak. Your system executes.",
-                hero_subtitle: "Think. Create. Evolve.<br>On your terms. At your rhythm.",
-                hero_cta: "TAKE CONTROL — $1,692",
+   <script>
+  const LANG_KEY = 'gtby_lang';
 
-                anywhere_title: "Create Anywhere. Anytime.",
-                anywhere_subtitle: "Your assistant travels with you. Fluid interaction. Complete mobility.",
-                voice_title: "Voice-First",
-                voice_desc: "Speak your ideas while walking, cooking, or relaxing. Your system captures everything.",
-                deep_title: "Deep Work",
-                deep_desc: "Sit down, focus, and collaborate with your AI partner for intensive creation sessions.",
-                everywhere_title: "Everywhere",
-                everywhere_desc: "At home, at the office, on the move — your creative system follows you seamlessly.",
-                instant_title: "Instant Response",
-                instant_desc: "No lag. No waiting. Your assistant responds in real-time, every time.",
+  const translations = {
+      en: {
+          hero_title: "THE CREATOR CONTROL SYSTEM",
+          hero_signature: "Creation, amplified. You speak. Your system executes.",
+          hero_subtitle: "Think. Create. Evolve.<br>On your terms. At your rhythm.",
+          hero_cta: "TAKE CONTROL — $1,692",
+          anywhere_title: "Create Anywhere. Anytime.",
+          anywhere_subtitle: "Your assistant travels with you. Fluid interaction. Complete mobility.",
+          voice_title: "Voice-First",
+          voice_desc: "Speak your ideas while walking, cooking, or relaxing. Your system captures everything.",
+          deep_title: "Deep Work",
+          deep_desc: "Sit down, focus, and collaborate with your AI partner for intensive creation sessions.",
+          everywhere_title: "Everywhere",
+          everywhere_desc: "At home, at the office, on the move — your creative system follows you seamlessly.",
+          instant_title: "Instant Response",
+          instant_desc: "No lag. No waiting. Your assistant responds in real-time, every time.",
+          complete_title: "Complete System",
+          complete_p1: "The <span class=\"highlight\">Creator Control System</span> is not a tool.<br>It’s a complete creative experience, designed to work:",
+          complete_p2: "→ in focused, serious, productive mode<br>→ in flexible mode, speaking, walking, sipping a coffee",
+          complete_p3: "This system follows you:",
+          complete_c1: "when you’re at the studio",
+          complete_c2: "when you’re at home",
+          complete_c3: "when you’re on the move",
+          complete_c4: "when an idea appears",
+          complete_c5: "when you have 2 minutes",
+          complete_c6: "when you have 2 hours",
+          complete_bottom: "You create while working,<br>or you create while living.<br>Both work.<br>Both count.",
+          results_title: "How I reached 4 million views without ads.",
+          results_p1: "Thanks to a system that <span class=\"highlight\">amplifies the artist</span><br>but never replaces the artist.",
+          results_r1: "I validate my images",
+          results_r2: "I control my style",
+          results_r3: "I guide my ideas",
+          results_r4: "I move forward naturally",
+          results_r5: "and GTBY accelerates everything",
+          results_bottom: "The Creator Control System doesn’t automate your creativity.<br><span class=\"highlight\">It multiplies it.</span>",
+          bots_title: "3 assistants — 15 AI specialists — all working together.",
+          bots_subheading: "A complete creative department rebuilt in AI.",
+          bot1_title: "TikTok Manager",
+          bot1_desc: "Strategy & growth.",
+          bot2_title: "ViralProPost",
+          bot2_desc: "Post creation across all platforms.",
+          bot3_title: "Visual Vantage",
+          bot3_desc: "Images, visuals, consistency.",
+          bots_bottom: "Each bot contains several specialized AI agents.<br>Together, they form a complete team built to push a creator at high speed.",
+          price_title: "Why $1,692?",
+          price_subtitle: "one-time payment",
+          price_tax: "$1,692 — price excludes taxes (calculated at checkout).",
+          price_guarantee: "No subscription. No upsells.<br>You pay once — you own the system.",
+          price_intro: "This system helped me get:",
+          price_l1: "4M views in one year",
+          price_l2: "14,100 followers",
+          price_l3: "a signature visual identity",
+          price_l4: "without paid ads",
+          price_l5: "without a team",
+          price_l6: "by creating at my own rhythm",
+          price_bottom_title: "This price:",
+          price_b1: "filters serious creators",
+          price_b2: "positions GTBY as premium",
+          price_b3: "reflects the real value of the system",
+          price_b4: "keeps the experience exclusive",
+          final_title: "Unlock your evolution.<br>Own the system.<br>Take control.",
+          final_cta: "TAKE CONTROL — $1,692"
+      },
+      fr: {
+          hero_title: "THE CREATOR CONTROL SYSTEM",
+          hero_signature: "Création amplifiée. Tu parles. Ton système exécute.",
+          hero_subtitle: "Think. Create. Evolve.<br>À ton rythme. À tes conditions.",
+          hero_cta: "TAKE CONTROL — $1,692",
+          anywhere_title: "Crée partout. À tout moment.",
+          anywhere_subtitle: "Ton assistant te suit. Interaction fluide. Mobilité totale.",
+          voice_title: "Mode Voix",
+          voice_desc: "Exprime tes idées en marchant, en cuisinant ou en te posant. Ton système capture tout.",
+          deep_title: "Deep Work",
+          deep_desc: "Assieds-toi, concentre-toi et collabore avec ton partenaire IA pour des sessions de création intensives.",
+          everywhere_title: "Partout",
+          everywhere_desc: "Chez toi, au bureau, en déplacement — ton système créatif te suit sans friction.",
+          instant_title: "Réponse Instantanée",
+          instant_desc: "Pas d’attente. Pas de lag. Ton assistant répond en temps réel, à chaque fois.",
+          complete_title: "Système Complet",
+          complete_p1: "Le <span class=\"highlight\">Creator Control System</span> n’est pas un outil.<br>C’est une expérience créative complète, pensée pour fonctionner :",
+          complete_p2: "→ en mode sérieux, concentré, productif<br>→ en mode flexible, en parlant, en marchant, en buvant un café",
+          complete_p3: "Ce système t’accompagne :",
+          complete_c1: "quand tu es au studio",
+          complete_c2: "quand tu es chez toi",
+          complete_c3: "quand tu es en mouvement",
+          complete_c4: "quand une idée arrive",
+          complete_c5: "quand tu as 2 minutes",
+          complete_c6: "quand tu as 2 heures",
+          complete_bottom: "Tu crées en travaillant,<br>ou tu crées en vivant.<br>Les deux fonctionnent.<br>Les deux comptent.",
+          results_title: "Comment j’ai atteint 4 millions de vues sans publicité.",
+          results_p1: "Grâce à un système qui <span class=\"highlight\">amplifie l’artiste</span><br>mais ne remplace jamais l’artiste.",
+          results_r1: "je valide mes images",
+          results_r2: "je contrôle mon style",
+          results_r3: "je guide mes idées",
+          results_r4: "j’avance naturellement",
+          results_r5: "et GTBY accélère tout",
+          results_bottom: "Le Creator Control System n’automatise pas ta créativité.<br><span class=\"highlight\">Il la multiplie.</span>",
+          bots_title: "3 assistants — 15 spécialistes IA — qui travaillent ensemble.",
+          bots_subheading: "Un département créatif complet, reconstruit en IA.",
+          bot1_title: "TikTok Manager",
+          bot1_desc: "Stratégie & croissance.",
+          bot2_title: "ViralProPost",
+          bot2_desc: "Création de posts pour toutes les plateformes.",
+          bot3_title: "Visual Vantage",
+          bot3_desc: "Images, visuels, cohérence.",
+          bots_bottom: "Chaque bot contient plusieurs agents IA spécialisés.<br>Ensemble, ils deviennent une équipe complète pour propulser un créateur à très haute vitesse.",
+          price_title: "Pourquoi 1 692 $ ?",
+          price_subtitle: "paiement unique",
+          price_tax: "1 692 $ — prix hors taxes (calculé lors du paiement).",
+          price_guarantee: "Aucun abonnement. Aucun upsell.<br>Tu payes une fois — tu possèdes le système.",
+          price_intro: "Ce système m’a permis d’obtenir :",
+          price_l1: "4M de vues en un an",
+          price_l2: "14 100 abonnés",
+          price_l3: "une identité visuelle signature",
+          price_l4: "sans publicité payante",
+          price_l5: "sans équipe",
+          price_l6: "en créant à mon propre rythme",
+          price_bottom_title: "Ce prix :",
+          price_b1: "filtre les créateurs sérieux",
+          price_b2: "positionne GTBY en premium",
+          price_b3: "reflète la vraie valeur du système",
+          price_b4: "garantit l’exclusivité",
+          final_title: "Déverrouille ton évolution.<br>Possède le système.<br>Take control.",
+          final_cta: "TAKE CONTROL — $1,692"
+      }
+  };
 
-                complete_title: "Complete System",
-                complete_p1: "The <span class=\"highlight\">Creator Control System</span> is not a tool.<br>It’s a complete creative experience, designed to work:",
-                complete_p2: "→ in focused, serious, productive mode<br>→ in flexible mode, speaking, walking, sipping a coffee",
-                complete_p3: "This system follows you:",
-                complete_c1: "when you’re at the studio",
-                complete_c2: "when you’re at home",
-                complete_c3: "when you’re on the move",
-                complete_c4: "when an idea appears",
-                complete_c5: "when you have 2 minutes",
-                complete_c6: "when you have 2 hours",
-                complete_bottom: "You create while working,<br>or you create while living.<br>Both work.<br>Both count.",
+  const overlay = document.getElementById("lang-overlay");
+  const mainContent = document.querySelector("main");
+  const langButtons = document.querySelectorAll(".lang-btn");
 
-                results_title: "How I reached 4 million views without ads.",
-                results_p1: "Thanks to a system that <span class=\"highlight\">amplifies the artist</span><br>but never replaces the artist.",
-                results_r1: "I validate my images",
-                results_r2: "I control my style",
-                results_r3: "I guide my ideas",
-                results_r4: "I move forward naturally",
-                results_r5: "and GTBY accelerates everything",
-                results_bottom: "The Creator Control System doesn’t automate your creativity.<br><span class=\"highlight\">It multiplies it.</span>",
+  function applyLanguage(lang) {
+      const dict = translations[lang];
+      if (!dict) return;
 
-                bots_title: "3 assistants — 15 AI specialists — all working together.",
-                bots_subheading: "A complete creative department rebuilt in AI.",
-                bot1_title: "TikTok Manager",
-                bot1_desc: "Strategy & growth.",
-                bot2_title: "ViralProPost",
-                bot2_desc: "Post creation across all platforms.",
-                bot3_title: "Visual Vantage",
-                bot3_desc: "Images, visuals, consistency.",
-                bots_bottom: "Each bot contains several specialized AI agents.<br>Together, they form a complete team built to push a creator at high speed.",
+      document.documentElement.lang = lang;
 
-                price_title: "Why $1,692?",
-                price_subtitle: "one-time payment",
-                price_tax: "$1,692 — price excludes taxes (calculated at checkout).",
-                price_guarantee: "No subscription. No upsells.<br>You pay once — you own the system.",
-                price_intro: "This system helped me get:",
-                price_l1: "4M views in one year",
-                price_l2: "14,100 followers",
-                price_l3: "a signature visual identity",
-                price_l4: "without paid ads",
-                price_l5: "without a team",
-                price_l6: "by creating at my own rhythm",
-                price_bottom_title: "This price:",
-                price_b1: "filters serious creators",
-                price_b2: "positions GTBY as premium",
-                price_b3: "reflects the real value of the system",
-                price_b4: "keeps the experience exclusive",
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+          const key = el.getAttribute("data-i18n");
+          if (dict[key]) {
+              el.innerHTML = dict[key];
+          }
+      });
+  }
 
-                final_title: "Unlock your evolution.<br>Own the system.<br>Take control.",
-                final_cta: "TAKE CONTROL — $1,692"
-            },
-            fr: {
-                hero_title: "THE CREATOR CONTROL SYSTEM",
-                hero_signature: "Création amplifiée. Tu parles. Ton système exécute.",
-                hero_subtitle: "Think. Create. Evolve.<br>À ton rythme. À tes conditions.",
-                hero_cta: "TAKE CONTROL — $1,692",
+  // 1) Si la langue est déjà sauvegardée → on applique et on cache la popup
+  const savedLang = localStorage.getItem(LANG_KEY);
+  if (savedLang && translations[savedLang]) {
+      applyLanguage(savedLang);
+      overlay.classList.add("hidden");
+  }
 
-                anywhere_title: "Crée partout. À tout moment.",
-                anywhere_subtitle: "Ton assistant te suit. Interaction fluide. Mobilité totale.",
-                voice_title: "Mode Voix",
-                voice_desc: "Exprime tes idées en marchant, en cuisinant ou en te posant. Ton système capture tout.",
-                deep_title: "Deep Work",
-                deep_desc: "Assieds-toi, concentre-toi et collabore avec ton partenaire IA pour des sessions de création intensives.",
-                everywhere_title: "Partout",
-                everywhere_desc: "Chez toi, au bureau, en déplacement — ton système créatif te suit sans friction.",
-                instant_title: "Réponse Instantanée",
-                instant_desc: "Pas d’attente. Pas de lag. Ton assistant répond en temps réel, à chaque fois.",
+  // 2) Clic sur FR / EN
+  langButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+          const lang = btn.dataset.lang || "en";
 
-                complete_title: "Système Complet",
-                complete_p1: "Le <span class=\"highlight\">Creator Control System</span> n’est pas un outil.<br>C’est une expérience créative complète, pensée pour fonctionner :",
-                complete_p2: "→ en mode sérieux, concentré, productif<br>→ en mode flexible, en parlant, en marchant, en buvant un café",
-                complete_p3: "Ce système t’accompagne :",
-                complete_c1: "quand tu es au studio",
-                complete_c2: "quand tu es chez toi",
-                complete_c3: "quand tu es en mouvement",
-                complete_c4: "quand une idée arrive",
-                complete_c5: "quand tu as 2 minutes",
-                complete_c6: "quand tu as 2 heures",
-                complete_bottom: "Tu crées en travaillant,<br>ou tu crées en vivant.<br>Les deux fonctionnent.<br>Les deux comptent.",
+          localStorage.setItem(LANG_KEY, lang);
+          applyLanguage(lang);
 
-                results_title: "Comment j’ai atteint 4 millions de vues sans publicité.",
-                results_p1: "Grâce à un système qui <span class=\"highlight\">amplifie l’artiste</span><br>mais ne remplace jamais l’artiste.",
-                results_r1: "je valide mes images",
-                results_r2: "je contrôle mon style",
-                results_r3: "je guide mes idées",
-                results_r4: "j’avance naturellement",
-                results_r5: "et GTBY accélère tout",
-                results_bottom: "Le Creator Control System n’automatise pas ta créativité.<br><span class=\"highlight\">Il la multiplie.</span>",
+          overlay.classList.add("hidden");
+      });
+  });
 
-                bots_title: "3 assistants — 15 spécialistes IA — qui travaillent ensemble.",
-                bots_subheading: "Un département créatif complet, reconstruit en IA.",
-                bot1_title: "TikTok Manager",
-                bot1_desc: "Stratégie & croissance.",
-                bot2_title: "ViralProPost",
-                bot2_desc: "Création de posts pour toutes les plateformes.",
-                bot3_title: "Visual Vantage",
-                bot3_desc: "Images, visuels, cohérence.",
-                bots_bottom: "Chaque bot contient plusieurs agents IA spécialisés.<br>Ensemble, ils deviennent une équipe complète pour propulser un créateur à très haute vitesse.",
+  // si aucune langue n’était sauvegardée, on laisse la popup visible par défaut
+</script>
 
-                price_title: "Pourquoi 1 692 $ ?",
-                price_subtitle: "paiement unique",
-                price_tax: "1 692 $ — prix hors taxes (calculé lors du paiement).",
-                price_guarantee: "Aucun abonnement. Aucun upsell.<br>Tu payes une fois — tu possèdes le système.",
-                price_intro: "Ce système m’a permis d’obtenir :",
-                price_l1: "4M de vues en un an",
-                price_l2: "14 100 abonnés",
-                price_l3: "une identité visuelle signature",
-                price_l4: "sans publicité payante",
-                price_l5: "sans équipe",
-                price_l6: "en créant à mon propre rythme",
-                price_bottom_title: "Ce prix :",
-                price_b1: "filtre les créateurs sérieux",
-                price_b2: "positionne GTBY en premium",
-                price_b3: "reflète la vraie valeur du système",
-                price_b4: "garantit l’exclusivité",
-
-                final_title: "Déverrouille ton évolution.<br>Possède le système.<br>Take control.",
-                final_cta: "TAKE CONTROL — $1,692"
-            }
-        };
-
-        function setLanguage(lang){
-            const dict = translations[lang] || translations.en;
-            document.documentElement.lang = lang;
-
-            document.querySelectorAll("[data-i18n]").forEach(el => {
-                const key = el.getAttribute("data-i18n");
-                if (dict[key]) {
-                    el.innerHTML = dict[key];
-                }
-            });
-
-            const title = document.getElementById("lang-title");
-            const subtitle = document.getElementById("lang-subtitle");
-            if(lang === "fr"){
-                title.textContent = "Choisis ta langue";
-                subtitle.textContent = "Sélectionne ta langue pour découvrir le Creator Control System.";
-            } else {
-                title.textContent = "Choose your language";
-                subtitle.textContent = "Select your language to unlock the Creator Control System experience.";
-            }
-
-            document.getElementById("lang-overlay").classList.add("hidden");
-        }
-    </script>
 </body>
 </html>
