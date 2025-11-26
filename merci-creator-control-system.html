@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creator Control System – Access Unlocked</title>
+  <meta name="description" content="Thank you for your purchase. Access your three AI assistants: Post Manager, ViralProPost and Visual Vantage V1." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #050507;
+      color: #e8e8e8;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 80px 0 40px;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 900px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.16) 0%, transparent 70%);
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #b3b3b3;
+      max-width: 640px;
+      margin: 0 auto 24px;
+    }
+
+    .hero-note {
+      font-size: 0.9rem;
+      color: #8c8c8c;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .hero-note span {
+      color: #c4b5fd;
+      font-weight: 500;
+    }
+
+    /* ACCESS PILL (entre hero et assistants) */
+    .access-strip {
+      margin-bottom: 30px;
+    }
+
+    .access-pill-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .access-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(139, 92, 246, 0.6);
+      background: radial-gradient(circle at 0 0, rgba(139, 92, 246, 0.35), transparent 60%);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #e5ddff;
+      box-shadow: 0 0 26px rgba(76, 29, 149, 0.7);
+    }
+
+    .access-pill-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 14px rgba(34, 197, 94, 0.9);
+    }
+
+    /* SECTION ASSISTANTS */
+    section.assistants {
+      padding: 20px 0 90px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-title h2 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title p {
+      font-size: 0.98rem;
+      color: #a1a1aa;
+    }
+
+    .assist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      margin-top: 10px;
+    }
+
+    .assist-card {
+      background: radial-gradient(circle at top, rgba(139, 92, 246, 0.16) 0%, #050507 55%);
+      border-radius: 18px;
+      padding: 26px 22px 24px;
+      border: 1px solid rgba(148, 163, 184, 0.26);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 22px 45px rgba(15, 23, 42, 0.8);
+    }
+
+    .assist-badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #a5b4fc;
+      margin-bottom: 4px;
+    }
+
+    .assist-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+    .assist-role {
+      font-size: 0.92rem;
+      color: #a1a1aa;
+      margin-bottom: 6px;
+    }
+
+    .assist-desc {
+      font-size: 0.9rem;
+      color: #d4d4d8;
+      line-height: 1.7;
+    }
+
+    .assist-meta {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      margin-top: auto;
+      padding-top: 6px;
+    }
+
+    .assist-meta span {
+      color: #c4b5fd;
+      font-weight: 500;
+    }
+
+    .assist-cta {
+      margin-top: 12px;
+    }
+
+    .assist-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      background: rgba(12, 10, 24, 0.9);
+      color: #f9fafb;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .assist-btn span.icon {
+      font-size: 1rem;
+    }
+
+    .assist-btn:hover {
+      background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+      border-color: #8b5cf6;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(76, 29, 149, 0.55);
+    }
+
+    /* FOOTER NOTE */
+    footer {
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 18px 0 26px;
+      font-size: 0.8rem;
+      color: #737373;
+      text-align: center;
+    }
+
+    footer span.brand {
+      color: #c4b5fd;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 70px 0 30px;
+      }
+      h1 {
+        font-size: 2.1rem;
+      }
+      .hero-subtitle {
+        font-size: 0.98rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO / CONFIRMATION -->
+  <main>
+    <section class="hero">
+      <div class="hero-inner container">
+        <h1>Thank you. Your Creator Control System is now live.</h1>
+
+        <p class="hero-subtitle">
+          You now have full access to your 3 AI assistants dedicated to your growth as a creator.
+          Use them at your rhythm — and let the system work with you.
+        </p>
+
+        <p class="hero-note">
+          You can bookmark this page to come back anytime.<br />
+          <span>No hidden steps. Just your assistants, ready.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ACCESS PILL BETWEEN HERO & ASSISTANTS -->
+    <section class="access-strip">
+      <div class="container access-pill-wrapper">
+        <div class="access-pill">
+          <span class="access-pill-dot"></span>
+          <span>ACCESS ACTIVATED</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASSISTANTS GRID -->
+    <section class="assistants">
+      <div class="container">
+        <div class="section-title">
+          <h2>Your 3 AI assistants</h2>
+          <p>Each one covers a part of your creative system. Together, they form your full Creator Control System.</p>
+        </div>
+
+        <div class="assist-grid">
+
+          <!-- POST MANAGER -->
+          <article class="assist-card">
+            <div class="assist-badge">Assistant 01 · Strategy</div>
+            <div class="assist-name">Post Manager</div>
+            <div class="assist-role">Strategy, planning & growth for your content.</div>
+            <p class="assist-desc">
+              Define your positioning, plan your series, structure your posting rhythm and align your content with your goals.
+              Post Manager thinks like a strategist so you can focus on creating.
+            </p>
+            <p class="assist-meta">
+              Best used for: <span>content roadmap, series planning, growth strategy.</span>
+            </p>
+            <div class="assist-cta">
+              <a
+                class="assist-btn"
+                href="https://chatgpt.com/g/g-6927401c158481918adc1e420f5e715e-post-manager"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="icon">↗</span>
+                <span>Open Post Manager</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- VIRALPROPOST -->
+          <article class="assist-card">
+            <div class="assist-badge">Assistant 02 · Content</div>
+            <div class="assist-name">ViralProPost</div>
+            <div class="assist-role">Post creation for all platforms.</div>
+            <p class="assist-desc">
+              Turn your ideas, notes or visuals into structured posts adapted to TikTok, Instagram, X, LinkedIn and more.
+              ViralProPost helps you write, refine and adapt your content to every format.
+            </p>
+            <p class="assist-meta">
+              Best used for: <span>scripts, captions, hooks, multi-platform posts.</span>
+            </p>
+            <div class="assist-cta">
+              <a
+                class="assist-btn"
+                href="https://chatgpt.com/g/g-67c38055abe881918be02565dcc9f448-viralpost-pro"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="icon">↗</span>
+                <span>Open ViralProPost</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- VISUAL VANTAGE -->
+          <article class="assist-card">
+            <div class="assist-badge">Assistant 03 · Visual</div>
+            <div class="assist-name">Visual Vantage V1</div>
+            <div class="assist-role">Visuals, prompts & aesthetic consistency.</div>
+            <p class="assist-desc">
+              Generate powerful prompts, refine your visual direction and maintain a strong, coherent aesthetic across your work.
+              Visual Vantage helps you build a recognisable visual universe.
+            </p>
+            <p class="assist-meta">
+              Best used for: <span>Midjourney prompts, series consistency, mood & style.</span>
+            </p>
+            <div class="assist-cta">
+              <a
+                class="assist-btn"
+                href="https://chatgpt.com/g/g-69132025ef548191bc3e60d94751f9d7-visual-vantage-v1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="icon">↗</span>
+                <span>Open Visual Vantage V1</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        Built by <span class="brand">GTBY – Generate To Be You</span>.  
+        Think. Create. Evolve. Take Control.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
